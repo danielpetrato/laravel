@@ -13,11 +13,28 @@
 
 use Illuminate\Http\Request;
 
+//MVC - MODEL VIEW CONTROLLER
+
 Route::get('/', function() {
-    return view('welcome');
+    return view('welcome'); //helper
 });
 
-Route::get('/cliente',function(){
+Route::get('/cliente/cadastrar', function() {
+    $nome = "Luiz Fernando";
+    $variavel1 = "valor";
+    //metodo 1
+    /*return view('cadastrar',[ 
+        'nome' => $nome,
+        'variavel1' => $variavel1
+    ]);*/
+    //return view('cadastrar',compact('nome','variavel1')); -- metodo 2
+    return view('cliente.cadastrar')//metodo 3
+        ->with('nome', $nome)
+        ->with('variavel1', $variavel1);
+
+});
+
+/*Route::get('/cliente',function(){
 
     $csrfToken = csrf_token();//token de verificacao do laravel csrf e o campo com o token do tipo hidden
     $html = <<<HTML
@@ -42,7 +59,7 @@ Route::post('/cliente/cadastrar', function (Request $request) {
     echo $request->name;
 });
 
-/*// Rota com mais de um nome
+// Rota com mais de um nome
 Route::get('/admin/cliente',function(){
     return "Admin - HeLLO WORD!!";
 });
