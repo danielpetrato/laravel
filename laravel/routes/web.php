@@ -11,15 +11,38 @@
 |
 */
 
-Route::get('/', function () {
+use Illuminate\Http\Request;
+
+Route::get('/', function() {
     return view('welcome');
 });
 
 Route::get('/cliente',function(){
-    return "HeLLO WORD!!";
+
+    $csrfToken = csrf_token();//token de verificacao do laravel csrf e o campo com o token do tipo hidden
+    $html = <<<HTML
+<html>
+<body>
+    <h1>Cliente</h1>
+    <form method="post" action="/cliente/cadastrar">
+        <input name="_token" id="" class="btn btn-primary" type="hidden" value="$csrfToken"> 
+        <input name="name" id="" class="btn btn-primary" type="text" value="">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</body>
+</html>
+HTML;
+    RETURN $html;
+
 });
 
-// Rota com mais de um nome
+// Pegando informacao do formulario com Illuminate\Http\Request - 2 formas abaixo
+Route::post('/cliente/cadastrar', function (Request $request) {
+    echo $request->get('name');
+    echo $request->name;
+});
+
+/*// Rota com mais de um nome
 Route::get('/admin/cliente',function(){
     return "Admin - HeLLO WORD!!";
 });
@@ -42,4 +65,4 @@ Route::get('/produto/{name}/{id}',function($name,$id){
 // Rota com 2 ou mais parametros na URL - o id e opcional por causa do ?
 Route::get('/teste/{name}/{id?}',function($name,$id = 1000){
     return "Produto $name - $id";
-});
+});*/
