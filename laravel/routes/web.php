@@ -22,10 +22,11 @@ Route::get('/', function() {
 Route::get('/blade',function(){
     $nome = "Luiz Fernando";
     $variavel1 = "valor";
+    $test = "Tenho valor";
     return view('teste')
     ->with('nome', $nome)
-    ->with('variavel1', $variavel1);
-
+    ->with('variavel1', $variavel1)
+    ->with('test', $test); // coloca valor na variavel isset no teste.blade
 });
 
 Route::get('/cliente/cadastrar', function() {
