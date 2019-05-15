@@ -1,5 +1,6 @@
 Hello World!!! 
 <br/>
 {{$nome}}
-<br/>
+<br/> 
 {{$variavel1}}
+teste
