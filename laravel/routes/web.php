@@ -24,6 +24,8 @@ use Illuminate\Http\Request;
 // php artisan migrate:status - mostra as migrações que foram executadas
 //php artisan - mostra todos os comandos do artisan
 
+//php artisan tinker - cria uma instancia da classe para teste no model - aula 17
+
 //php artisan make:controller - cria um controller na app > http > controllers - pode usar admin\nomeController para criar em uma subpasta
 //php artisan make:model - cria um model na pasta app - pode usar admin\nomeController para criar em uma subpasta
 //php artisan make:migration create_clients_table --create=clients
