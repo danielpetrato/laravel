@@ -28,7 +28,12 @@ Route::get('/', function() {
 
 
 Route::group(['prefix' => '/'], function(){ //Criação de grupos de rotas para organização
-    Route::get('controller/cliente/cadastrar','ClientsController@cadastrar'); // Rota apontando para o controller ClientsController na function cadastrar
+    Route::get('/cliente/cadastrar','ClientsController@cadastrar'); // Rota apontando para o controller ClientsController na function cadastrar
+    Route::get('env', function() {
+        //var_dump($_ENV); //exibindo arquivo .env
+        //var_dump(getenv('NOME')); //exibindo a variavel nome criada no .env
+        var_dump(env('NOME','xpto')); //exibindo a variavel nome criada no .env se a variavel não existir ele coloca xpto
+    });
 });
 
 Route::group(['prefix' => '/admin'], function(){//Grupo de rotas admin
