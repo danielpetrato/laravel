@@ -19,6 +19,16 @@ Route::get('/', function() {
     return view('welcome'); //helper
 });
 
+Route::get('/for-if/{value}', function($value) {
+    return view('for-if') //helper
+    ->with('value', $value)
+    ->with('myArray', [
+        'chave1' => 'valor1',
+        'chave2' => 'valor2',
+        'chave3' => 'valor3'
+    ]);
+});
+
 Route::get('/blade',function(){
     $nome = "Luiz Fernando";
     $variavel1 = "valor";
