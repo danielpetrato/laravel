@@ -15,6 +15,12 @@ use Illuminate\Http\Request;
 
 //MVC - MODEL VIEW CONTROLLER
 
+// Comandos php artisan 
+// php artisan route:list - lista todas as rotas
+// php artisan down - derruba o servidor
+// php artisan up - sobe o servidor
+
+
 Route::get('/', function() {
     return view('welcome'); //helper
 });
