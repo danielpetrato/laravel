@@ -19,9 +19,14 @@ use Illuminate\Http\Request;
 // php artisan route:list - lista todas as rotas
 // php artisan down - derruba o servidor
 // php artisan up - sobe o servidor
+// php artisan migrate - executa as migrações
+// php artisan migrate:refresh - disfaz e faz novamente a migração - apaga e cria dnv as tabelas
+// php artisan migrate:status - mostra as migrações que foram executadas
+//php artisan - mostra todos os comandos do artisan
 
 //php artisan make:controller - cria um controller na app > http > controllers - pode usar admin\nomeController para criar em uma subpasta
 //php artisan make:model - cria um model na pasta app - pode usar admin\nomeController para criar em uma subpasta
+//php artisan make:migration create_clients_table --create=clients
 //AS config de acesso ao banco fica no .env
 Route::get('/', function() {
     return view('welcome'); //helper
