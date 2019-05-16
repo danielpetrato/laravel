@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreatePasswordResetsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations. Aula 15 - iniciando com laravel
      *
      * @return void
      */
