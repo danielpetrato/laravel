@@ -20,14 +20,22 @@ use Illuminate\Http\Request;
 // php artisan down - derruba o servidor
 // php artisan up - sobe o servidor
 
-//php artisan make:controller - cria um controller na app > http > controllers
+//php artisan make:controller - cria um controller na app > http > controllers - pode usar admin\nomeController para criar em uma subpasta
 
 Route::get('/', function() {
     return view('welcome'); //helper
 });
 
-Route::get('controller/cliente/cadastrar','ClientsController@cadastrar'); // Rota apontando para o controller ClientsController na function cadastrar
 
+Route::group(['prefix' => '/'], function(){ //Criação de grupos de rotas para organização
+    Route::get('controller/cliente/cadastrar','ClientsController@cadastrar'); // Rota apontando para o controller ClientsController na function cadastrar
+});
+
+Route::group(['prefix' => '/admin'], function(){//Grupo de rotas admin
+    Route::group(['prefix' => '/cliente'], function(){//subGrupo de rotas cliente
+        Route::get('cadastrar','ClientsController@cadastrar'); //Rota para uma pagina de administrador
+    });    
+});
 
 Route::get('/for-if/{value}', function($value) {
     return view('for-if') //helper
