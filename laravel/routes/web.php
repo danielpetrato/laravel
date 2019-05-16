@@ -21,7 +21,8 @@ use Illuminate\Http\Request;
 // php artisan up - sobe o servidor
 
 //php artisan make:controller - cria um controller na app > http > controllers - pode usar admin\nomeController para criar em uma subpasta
-
+//php artisan make:model - cria um model na pasta app - pode usar admin\nomeController para criar em uma subpasta
+//AS config de acesso ao banco fica no .env
 Route::get('/', function() {
     return view('welcome'); //helper
 });
