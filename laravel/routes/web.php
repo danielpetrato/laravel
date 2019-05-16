@@ -20,10 +20,14 @@ use Illuminate\Http\Request;
 // php artisan down - derruba o servidor
 // php artisan up - sobe o servidor
 
+//php artisan make:controller - cria um controller na app > http > controllers
 
 Route::get('/', function() {
     return view('welcome'); //helper
 });
+
+Route::get('controller/cliente/cadastrar','ClientsController@cadastrar'); // Rota apontando para o controller ClientsController na function cadastrar
+
 
 Route::get('/for-if/{value}', function($value) {
     return view('for-if') //helper
