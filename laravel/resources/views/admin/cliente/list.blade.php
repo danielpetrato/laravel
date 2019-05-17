@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Listar clientes</h1>
+    <a href="/admin/client/form-cadastrar">Novo cliente</a>
     <table>
         <thead>
             <tr>
