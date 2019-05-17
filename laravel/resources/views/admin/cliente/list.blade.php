@@ -25,7 +25,8 @@
                     <td>{{$client->name}}</td>    
                     <td>{{$client->email}}</td>  
                     <td>
-                        <a href="{{"/admin/client/{$client->id}/form-editar"}}">Editar</a>
+                        <a href="{{"/admin/client/{$client->id}/form-editar"}}">Editar</a> |
+                        <a href="{{"/admin/client/{$client->id}/excluir"}}" onclick="event.preventDefault();if(confirm('Deseja excluir?')){window.location.href='{{"/admin/client/{$client->id}/excluir"}}'}">Excluir</a>
                     </td>       
                 </tr>
             @endforeach
