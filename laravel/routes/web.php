@@ -45,9 +45,10 @@ Route::group(['prefix' => '/'], function(){ //Criação de grupos de rotas para 
 });
 
 Route::group(['prefix' => '/admin'], function(){//Grupo de rotas admin
-    Route::group(['prefix' => '/cliente'], function(){//subGrupo de rotas cliente
+    Route::get('client','ClientsController@listar');
+   /* Route::group(['prefix' => '/cliente'], function(){//subGrupo de rotas cliente
         Route::get('cadastrar','ClientsController@cadastrar'); //Rota para uma pagina de administrador
-    });    
+    });    */
 });
 
 Route::get('/for-if/{value}', function($value) {

@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Client;
 
 class ClientsController extends Controller
 {
+
+    public function listar(){
+        $clients = Client::all();
+        return view('admin.cliente.list',compact('clients'));
+    }
     public function cadastrar(){
         $nome = "Luiz Fernando";
         $variavel1 = "valor";
